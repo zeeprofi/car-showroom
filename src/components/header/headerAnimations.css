@@ -1,0 +1,37 @@
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-top {
+  animation: slide-in-top 0.3s ease forwards;
+}
+
+/* Restored the glow-pulse animation for use with the speedometer */
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(234, 56, 76, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(234, 56, 76, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(234, 56, 76, 0.5);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s infinite;
+}
+
+/* Keeping shadow utility if needed elsewhere */
+.shadow-glow {
+  box-shadow: 0 0 8px rgba(234, 56, 76, 0.7);
+}

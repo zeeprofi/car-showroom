@@ -1,0 +1,50 @@
+
+/* Custom logo styling with hover animation */
+.custom-logo {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.8);
+  --animation-color: #ea384c;
+  --fs-size: 1.5em;
+  letter-spacing: 1px;
+  font-size: var(--fs-size);
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* Text that appears on hover */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* Hover animation */
+.custom-logo:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+/* Fix for the "Revive" text inside the hover animation */
+.hover-text .text-primary {
+  color: var(--animation-color);
+  -webkit-text-stroke: 0;
+}
+
+.actual-text .text-primary {
+  -webkit-text-stroke: 0;
+}
+
+/* Ensure Motors text is positioned correctly */
+.custom-logo + span {
+  margin-top: 0.25rem;
+}
